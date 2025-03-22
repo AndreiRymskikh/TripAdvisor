@@ -14,17 +14,22 @@ namespace TripAdvisorATF.Tests
         [Fact]
         public async Task GetCaribbeanCruisesSortAndPrintTest()
         {
-            // int destinationId = await _cruisesClient.GetDestinationIdAsync("Caribbean");
-            int destinationId = 147237;
+            int destinationId = await _cruisesClient.GetDestinationIdAsync("Caribbean");
+            //It can be needed when getLocation endpoint is down. So, I better leave it here
+            //int destinationId = 147237;
 
             var cruises = await _cruisesClient.GetCruisesByDestinationAsync(destinationId);
+            var sortedCruises = cruises
+                .DistinctBy(c => c.Ship.Name)
+                .OrderByDescending(c => c.Ship.Crew)
+                .ToList();
 
-            var sortedCruises = cruises.OrderByDescending(c => c.Ship.Crew).ToList();
+            Assert.NotEmpty(sortedCruises);
 
             Console.WriteLine("\nCaribbean Cruises (sorted by Crew Count):");
             foreach (var cruise in sortedCruises)
             {
-                Console.WriteLine($"Ship: {cruise.Ship.Name}, Crew Count: {cruise.Ship.Crew}");
+                Console.WriteLine($"Ship: {cruise.Ship.Name}");
             }
         }
     }
