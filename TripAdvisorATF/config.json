@@ -1,5 +1,7 @@
 {
   "BaseUrl": "https://tripadvisor16.p.rapidapi.com/api/v1",
   "ApiHost": "tripadvisor16.p.rapidapi.com",
-  "ApiKey": "9f5cee0ec1msh5fbc6dca0d04951p1fa787jsn5660cf6bbdb7"
+  "ApiKey": "9f5cee0ec1msh5fbc6dca0d04951p1fa787jsn5660cf6bbdb7",
+  "DefaultOrder": "popularity",
+  "DefaultCurrency": "USD"
 }
