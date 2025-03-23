@@ -14,9 +14,9 @@ This is C# + RestSharp + xUnit automation testing framework.  The test fetchs an
 ## Setup Instructions
 
 Clone the repo:
-    git clone https://github.com/yourusername/TripAdvisorAutomation.git
+    git clone https://github.com/AndreiRymskikh/TripAdvisor.git
 
-Navigate to project:
+Navigate to project folder:
     cd TripAdvisorAutomation
 
 Install dependencies:
